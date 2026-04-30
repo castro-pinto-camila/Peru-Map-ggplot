@@ -51,7 +51,7 @@ labs(
 ```
 Lo demás funciona igual! :)
 
-## 🗺️ Parte 1: Mapa coroplético
+### Parte 1: Mapa coroplético
 
 Se representa una variable continua en el espacio geográfico.
 
@@ -83,13 +83,13 @@ Cada región del mapa recibe un color según en qué celda de esta grilla cae.
 Los mapas bivariados permiten explorar posibles asociaciones espaciales entre variables,
 lo cual es útil para generar hipótesis en estudios epidemiológicos o económicos.
 
-### 🔍 Hallazgos 
+### Hallazgos 
 
 Se encontró que, en los departamentos con mayor concentración de ambos problemas (color azul oscuro #3b4994) son los que requieren intervención prioritaria en políticas de salud pública.
 
 Los resultados muestran un claro patrón, los departamentos de la sierra y selva concentran los niveles más altos de anemia y desnutrición, mientras que los de la costa sur (Tacna, Moquegua, Ica) presentan los niveles más bajos.
 
-### 📚 Referencias
+### Referencias
 
 INEI (2022). Encuesta Demográfica y de Salud Familiar — ENDES 2022. Lima: Instituto Nacional de Estadística e Informática.
 
