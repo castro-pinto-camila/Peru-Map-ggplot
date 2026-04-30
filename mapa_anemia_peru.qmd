@@ -1,4 +1,72 @@
 > Este archivo es un ejemplo aplicado de un mapa bivariado.
 > Puede adaptarse a cualquier país reemplazando el shapefile y los datos.
 
+---
+title: "Anemia y Desnutrición Infantil en el Perú"
+subtitle: "Mapa bivariado por departamento · ENDES 2022"
+author: "Tu Nombre"
+date: today
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-title: "Contenido"
+    code-fold: true
+    code-summary: "Ver código"
+    self-contained: true
+execute:
+  warning: false
+  message: false
+---
+
+## Introducción
+
+Este proyecto visualiza la relación entre **anemia infantil** y **desnutrición crónica** 
+en los 25 departamentos del Perú, usando datos oficiales de la Encuesta Demográfica 
+y de Salud Familiar (ENDES 2022) publicada por el INEI.
+
+Se utiliza un **mapa bivariado**, una técnica que permite representar dos variables 
+simultáneamente mediante una paleta de color 2D. Esto revela patrones que un mapa 
+tradicional no podría mostrar: qué departamentos concentran ambos problemas al mismo tiempo.
+
+---
+
+## Librerías
+
+```{r}
+#| label: librerias
+
+# Obligatorias
+library(sf)        # manejo de datos geoespaciales
+library(ggplot2)   # visualización
+library(dplyr)     # manipulación de datos
+
+# Para el shapefile
+library(geodata)   # descarga automática del shapefile de Perú
+
+# Para unir mapa + leyenda
+library(cowplot)
+```
+
+---
+
+## Shapefile de Perú
+
+```{r}
+#| label: shapefile
+
+# Opción 1: descarga automática con geodata (recomendada, no requiere archivos externos)
+peru_sf <- gadm(country = "PER", level = 1, path = tempdir()) |>
+  st_as_sf()
+
+# Opción 2: shapefile oficial del IGN/INEI (mayor precisión cartográfica)
+# Descarga desde: ide.inei.gob.pe → descomprimir en carpeta /data
+# peru_sf <- st_read("data/departamentos.shp")
+
+# Verificamos los nombres exactos de los departamentos
+# (importante para que el join no falle)
+peru_sf$NAME_1
+```
+
+---
 
