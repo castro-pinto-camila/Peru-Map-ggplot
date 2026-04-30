@@ -30,4 +30,39 @@ Un mapa tradicional (coroplético) solo muestra una variable por región. Un map
     I    Alta  │ #5ac8c8 │ #5698b9 │ #3b4994 │ ← más crítico
     A          └─────────┴─────────┴─────────┘
 
-Cada región del mapa recibe un color según en qué celda de esta grilla cae.          
+Cada región del mapa recibe un color según en qué celda de esta grilla cae.    
+
+### ¿Cómo adaptarlo a otro país o variables?
+
+Se necesitas cambiar 3 cosas en el código. 
+1. El país del shapefile:
+```
+# Cambia "PER" por el código ISO de tu país
+# MEX = México | COL = Colombia | ARG = Argentina | BRA = Brasil
+peru_sf <- gadm(country = "PER", level = 1, path = tempdir()) |>
+  st_as_sf()
+```
+2. Tus propios datos:
+```
+datos <- data.frame(
+  region    = c("Región 1", "Región 2", ...),  # nombres exactos del shapefile
+  variable1 = c(...),                           # primera variable
+  variable2 = c(...)                            # segunda variable
+)
+```   
+3. Los títulos:
+```
+labs(
+  title    = "Título de tu mapa",
+  subtitle = "Descripción · Fuente y año"
+)
+```
+Lo demás funciona igual! :)
+
+### Requisitos:
+
+R 4.0 o superior con los siguientes paquetes:
+```
+# Instalar desde la Consola de R (solo la primera vez)
+install.packages(c("sf", "ggplot2", "dplyr", "geodata", "cowplot"))
+```
