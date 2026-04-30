@@ -61,7 +61,7 @@ Se representa una variable continua en el espacio geográfico.
 2. Unir datos
 3. Visualizar con ggplot2
 
-> [!NOTE] Nota
+> Nota:
 > Los mapas coropléticos pueden ser engañosos cuando las regiones tienen tamaños muy diferentes o poblaciones desiguales.
    
 ### Parte 2: ¿Qué es un mapa bivariado? 
