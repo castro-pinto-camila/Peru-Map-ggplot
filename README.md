@@ -1,4 +1,4 @@
-# Cómo crear mapas en R (aplicable a cualquier país)
+## Cómo crear mapas en R (aplicable a cualquier país)
 
 En este repositorio podrán encontrar una guía para construir mapas geográficos en R usando datos abiertos, desde un mapa coroplético básico hasta un mapa bivariado (una técnica de visualización que representa dos variables simultáneamente mediante una paleta de color 2D).
 
