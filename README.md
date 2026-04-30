@@ -34,7 +34,7 @@ Cada región del mapa recibe un color según en qué celda de esta grilla cae.
 
 ### ¿Cómo adaptarlo a otro país o variables?
 
-Se necesitas cambiar 3 cosas en el código. 
+Se necesita cambiar 3 cosas en el código. 
 1. El país del shapefile:
 ```
 # Cambia "PER" por el código ISO de tu país
