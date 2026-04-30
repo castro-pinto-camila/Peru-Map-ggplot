@@ -1,1 +1,4 @@
+> Este archivo es un ejemplo aplicado de un mapa bivariado.
+> Puede adaptarse a cualquier país reemplazando el shapefile y los datos.
+
 
