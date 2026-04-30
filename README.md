@@ -4,10 +4,10 @@ En este repositorio podrán encontrar una guía para construir mapas geográfico
 
 El flujo es reproducible y adaptable a cualquier país utilizando datos geoespaciales (shapefiles) y variables de interés. Como ejemplo, se visualiza la relación entre anemia infantil y desnutrición crónica en los 25 departamentos del Perú usando datos oficiales del INEI (ENDES 2024). 
 
-## Resultado ! 
+### Resultado ! 
 
 
-## Metodología
+### Metodología
 
 Se sigue un enfoque progresivo:
 
@@ -16,18 +16,18 @@ Se sigue un enfoque progresivo:
 3. Construcción de un mapa coroplético
 4. Extensión a un mapa bivariado (análisis multivariable visual)
 
-## ¿Qué es un mapa bivariado? 
+### ¿Qué es un mapa bivariado? 
 
 Un mapa tradicional (coroplético) solo muestra una variable por región. Un mapa bivariado muestra dos al mismo tiempo usando una paleta de color 2D:
 
                          DESNUTRICIÓN
                   Baja      Media      Alta
                ┌─────────┬─────────┬─────────┐
-         Baja  │ #e8e8e8 │ #dfb0d6 │ #be64ac │
-               ├─────────┼─────────┼─────────┤
-  ANEMIA Media │ #ace4e4 │ #a5b3cc │ #8c62aa │
-               ├─────────┼─────────┼─────────┤
-         Alta  │ #5ac8c8 │ #5698b9 │ #3b4994 │ ← más crítico
-               └─────────┴─────────┴─────────┘
+    A    Baja  │ #e8e8e8 │ #dfb0d6 │ #be64ac │
+    N          ├─────────┼─────────┼─────────┤
+    E    Media │ #ace4e4 │ #a5b3cc │ #8c62aa │   
+    M          ├─────────┼─────────┼─────────┤
+    I    Alta  │ #5ac8c8 │ #5698b9 │ #3b4994 │ ← más crítico
+    A          └─────────┴─────────┴─────────┘
 
 Cada región del mapa recibe un color según en qué celda de esta grilla cae.          
