@@ -91,7 +91,7 @@ Los resultados muestran un claro patrón, los departamentos de la sierra y selva
 
 ### Referencias
 
-INEI (2022). Encuesta Demográfica y de Salud Familiar — ENDES 2022. Lima: Instituto Nacional de Estadística e Informática.
+INEI (2024). Encuesta Demográfica y de Salud Familiar — ENDES 2024. Lima: Instituto Nacional de Estadística e Informática.
 
 Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer.
 
