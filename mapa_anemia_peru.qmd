@@ -42,7 +42,7 @@ library(ggplot2)   # visualización
 library(dplyr)     # manipulación de datos
 
 # Para el shapefile
-library(geodata)   # descarga automática del shapefile de Perú
+library(geodata)   # descarga automática del shapefile de Perú (o de otro país)
 
 # Para unir mapa + leyenda
 library(cowplot)
