@@ -135,4 +135,33 @@ datos <- data.frame(
 
 ```
 
+## Validación de datos antes del join
+
+```{r}
+# Limpieza básica de nombres
+datos <- datos |>
+  mutate(
+    region = toupper(trimws(region))
+  )
+
+# Verificar que todas las columnas tengan 26 valores
+nrow(datos)
+
+# Verificar coincidencias entre shapefile y datos
+setdiff(datos$region, peru_sf$region)
+setdiff(peru_sf$region, datos$region)
+```
+
+## Unión de datos (join)
+
+```{r}
+#| label: join
+
+peru_datos <- peru_sf |>
+  left_join(datos, by = "region")
+
+# Verificación final: si da 0, el join fue perfecto
+sum(is.na(peru_datos$anemia))
+sum(is.na(peru_datos$desnutricion))
+```
 ---
