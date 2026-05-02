@@ -13,7 +13,7 @@ El flujo es adaptable a cualquier país y conjunto de datos.
 
 ### Resultado ! 
 👉 **Ver resultado completo aquí:**  
-[🔗 Abrir visualización](mapa_bivariado_anemia.html)
+[🔗 Abrir visualización](mapa__anemia_peru.html)
 
 ### Metodología
 
