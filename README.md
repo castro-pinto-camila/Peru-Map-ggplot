@@ -14,7 +14,6 @@ El flujo es adaptable a cualquier país y conjunto de datos.
 ### Resultado ! 
 👉 **Ver resultado completo aquí:**  
 [🔗 Abrir visualización](mapa__anemia_peru.html)
-![Preview]("C:\Users\CAMILA\Downloads\mapa_bivariado_anemia_desnutricion_peru_2024.png")
 
 Ejemplo aplicado:
 - **Anemia infantil (6–35 meses)**
@@ -64,10 +63,7 @@ peru_sf <- gadm(country = "PER", level = 1, path = tempdir()) |>
 ```
 Ejemplos:
 
-MEX = México
-COL = Colombia
-ARG = Argentina
-BRA = Brasil
+MEX = México, COL = Colombia, ARG = Argentina, BRA = Brasil, etc...
 
 2. Usar tus propios datos
 ```
