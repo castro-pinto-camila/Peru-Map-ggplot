@@ -219,3 +219,43 @@ mapa_anemia <- ggplot(peru_datos) +
 mapa_anemia
 ```
 ---
+
+# Categorización bivariada
+
+```{r}
+## Categorización bivariada
+
+peru_datos <- peru_datos |>
+  mutate(
+    cat_anemia       = ntile(anemia, 3),
+    cat_desnutricion = ntile(desnutricion, 3),
+    bivar_class      = paste0(cat_anemia, "-", cat_desnutricion)
+  )
+```
+---
+
+## Paleta de colores bivariada
+
+```{r}
+#| label: paleta
+
+# Eje X (→) = Anemia       : tonos azules
+# Eje Y (↑) = Desnutrición : tonos púrpura/rosados
+# Cruce de ambos altos      : azul oscuro (más crítico)
+# Esta paleta es estándar en cartografía bivariada académica
+
+paleta_bivar <- c(
+  "1-1" = "#e8e8e8",  # anemia baja  + desnutrición baja  → gris claro
+  "2-1" = "#ace4e4",  # anemia media + desnutrición baja  → celeste
+  "3-1" = "#5ac8c8",  # anemia alta  + desnutrición baja  → turquesa
+  "1-2" = "#dfb0d6",  # anemia baja  + desnutrición media → lila claro
+  "2-2" = "#a5b3cc",  # anemia media + desnutrición media → gris azulado
+  "3-2" = "#5698b9",  # anemia alta  + desnutrición media → azul medio
+  "1-3" = "#be64ac",  # anemia baja  + desnutrición alta  → rosa
+  "2-3" = "#8c62aa",  # anemia media + desnutrición alta  → púrpura
+  "3-3" = "#3b4994"   # anemia alta  + desnutrición alta  → azul oscuro (CRÍTICO)
+)
+```
+
+---
+
