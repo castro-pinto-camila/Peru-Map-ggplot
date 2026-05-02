@@ -2,21 +2,23 @@
 > Puede adaptarse a cualquier país reemplazando el shapefile y los datos.
 
 ---
-title: "Anemia y Desnutrición Infantil en el Perú"
-subtitle: "Mapa bivariado por departamento · ENDES 2022"
-author: "Tu Nombre"
-date: today
+title: "Cómo crear mapas en R (aplicable a cualquier país)"
+author: "Camila Castro Pinto"
+date: "01 de mayo, 2026"
 format:
   html:
-    theme: flatly
+    theme: journal
     toc: true
     toc-title: "Contenido"
+    toc-location: left
+    number-sections: true
     code-fold: true
     code-summary: "Ver código"
-    self-contained: true
+    embed-resources: true
 execute:
   warning: false
   message: false
+editor: visual
 ---
 
 ## Introducción
