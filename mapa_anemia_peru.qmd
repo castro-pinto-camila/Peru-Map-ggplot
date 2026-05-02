@@ -52,21 +52,43 @@ library(cowplot)
 
 ## Shapefile de Perú
 
+En este caso se pueden usar 2 opciones, descargar el shapefile de una fuente OFICIAL que contiene una mayor precisión, o usar la de la librería geodata, para fines prácticos se trabaja con la librería cargada pero se muestra que hacer cuando se importa el shapefile.
+
 ```{r}
 #| label: shapefile
 
 # Opción 1: descarga automática con geodata (recomendada, no requiere archivos externos)
 peru_sf <- gadm(country = "PER", level = 1, path = tempdir()) |>
-  st_as_sf()
+st_as_sf()
 
 # Opción 2: shapefile oficial del IGN/INEI (mayor precisión cartográfica)
-# Descarga desde: ide.inei.gob.pe → descomprimir en carpeta /data
-# peru_sf <- st_read("data/departamentos.shp")
+# Reemplaza la ruta con donde guardaste tu archivo
+
+# peru_sf <- st_read("DEPARTAMENTO.gpkg")
+# Ver las capas disponibles dentro del gpkg (puede tener varias)
+# st_layers("DEPARTAMENTO.gpkg")
+
 
 # Verificamos los nombres exactos de los departamentos
 # (importante para que el join no falle)
-peru_sf$NAME_1
+names(peru_sf) # Ver como se llama la variable de nombres
+peru_sf$NAME_1 # Ver los nombres de los departamentos en el paquete
+```
+En este caso, se recodifica Lima Province como Lima Metropolitana y Lima como Departamento de Lima, siguiendo la forma en que la fuente reporta los datos.
+
+```{r}
+peru_sf <- peru_sf |>
+  mutate(
+    region = toupper(trimws(NAME_1)),
+    region = case_when(
+      region == "LIMA PROVINCE" ~ "LIMA METROPOLITANA",
+      region == "LIMA" ~ "DEPARTAMENTO DE LIMA",
+      TRUE ~ region
+    )
+  )
+
+# Verificación
+peru_sf$region
 ```
 
 ---
-
