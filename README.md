@@ -84,6 +84,9 @@ Cada región del mapa recibe un color según en qué celda de esta grilla cae.
 Los mapas bivariados permiten explorar posibles asociaciones espaciales entre variables,
 lo cual es útil para generar hipótesis en estudios epidemiológicos o económicos.
 
+Resultado: 
+<img width="768" height="960" alt="image" src="https://github.com/user-attachments/assets/3684a01e-f5f5-4dbb-af4c-1c8b087d665d" />
+
 ### Hallazgos 
 
 Se encontró que, en los departamentos con mayor concentración de ambos problemas (color azul oscuro #3b4994) son los que requieren intervención prioritaria en políticas de salud pública.
@@ -93,7 +96,3 @@ Los resultados muestran un claro patrón, los departamentos de la sierra y selva
 ### Referencias
 
 INEI (2024). Encuesta Demográfica y de Salud Familiar — ENDES 2024. Lima: Instituto Nacional de Estadística e Informática.
-
-Bivand, R., Pebesma, E., & Gomez-Rubio, V. (2013). Applied Spatial Data Analysis with R. Springer.
-
-Toth, C. (2021). Bivariate choropleth maps in R.
