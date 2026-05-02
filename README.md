@@ -5,6 +5,7 @@ En este repositorio podrán encontrar una guía para construir mapas geográfico
 El flujo es reproducible y adaptable a cualquier país utilizando datos geoespaciales (shapefiles) y variables de interés. Como ejemplo, se visualiza la relación entre anemia infantil y desnutrición crónica en los 25 departamentos del Perú usando datos oficiales del INEI (ENDES 2024). 
 
 ### Resultado ! 
+<img width="768" height="960" alt="image" src="https://github.com/user-attachments/assets/7888b4c4-66be-4b20-9065-1ee41aa2f11e" />
 
 
 ### Metodología
