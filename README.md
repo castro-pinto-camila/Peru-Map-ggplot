@@ -14,6 +14,13 @@ El flujo es adaptable a cualquier país y conjunto de datos.
 ### Resultado ! 
 👉 **Ver resultado completo aquí:**  
 [🔗 Abrir visualización](mapa__anemia_peru.html)
+![Preview]("C:\Users\CAMILA\Downloads\mapa_bivariado_anemia_desnutricion_peru_2024.png")
+Ejemplo aplicado:
+- **Anemia infantil (6–35 meses)**
+- **Desnutrición crónica (<5 años)**
+- Perú, 2024 (INEI)
+
+---
 
 ### Metodología
 
@@ -24,6 +31,8 @@ Se sigue un enfoque progresivo:
 3. Construcción de un mapa coroplético
 4. Extensión a un mapa bivariado (análisis multivariable visual)
 
+---
+
 ### Requisitos:
 
 R 4.0 o superior con los siguientes paquetes:
@@ -32,37 +41,54 @@ R 4.0 o superior con los siguientes paquetes:
 install.packages(c("sf", "ggplot2", "dplyr", "geodata", "cowplot"))
 ```
 
+---
+
+### ¿Cómo replicarlo?
+
+1. Clona el repositorio
+```
+git clone https://github.com/tu-usuario/tu-repo.git
+```
+3. Abre mapa.qmd en RStudio
+4. Renderiza
+
+---
+
 ### ¿Cómo adaptarlo a otro país o variables?
 
-1. El país del shapefile:
+1. Cambiar país
 ```
-# Cambia "PER" por el código ISO de tu país
-# MEX = México | COL = Colombia | ARG = Argentina | BRA = Brasil
 peru_sf <- gadm(country = "PER", level = 1, path = tempdir()) |>
-  st_as_sf()
+  st_as_sf()```
 ```
-2. Tus propios datos:
+Ejemplos:
+
+MEX = México
+COL = Colombia
+ARG = Argentina
+BRA = Brasil
+
+2. Usar tus propios datos
 ```
 datos <- data.frame(
-  region    = c("Región 1", "Región 2", ...),  # nombres exactos del shapefile
-  variable1 = c(...),                           # primera variable
-  variable2 = c(...)                            # segunda variable
+  region    = c("Región 1", "Región 2"),
+  variable1 = c(...),
+  variable2 = c(...)
 )
-```   
-3. Los títulos:
+```  
+3. Ajustar títulos
 ```
 labs(
   title    = "Título de tu mapa",
   subtitle = "Descripción · Fuente y año"
 )
 ```
-Lo demás funciona igual! :)
+---
 
-### Parte 1: Mapa coroplético
+### Tipos de mapas
+#### Mapa coroplético
 
-Se representa una variable continua en el espacio geográfico.
-
-### Pasos:
+Pasos:
 
 1. Cargar shapefile
 2. Unir datos
@@ -71,33 +97,25 @@ Se representa una variable continua en el espacio geográfico.
 > Nota:
 > Los mapas coropléticos pueden ser engañosos cuando las regiones tienen tamaños muy diferentes o poblaciones desiguales.
    
-### Parte 2: ¿Qué es un mapa bivariado? 
+#### Mapa bivariado
 
-Un mapa tradicional (coroplético) solo muestra una variable por región. Un mapa bivariado muestra dos al mismo tiempo usando una paleta de color 2D:
+Permite visualizar dos variables simultáneamente usando una paleta 2D, cada región del mapa recibe un color según en qué celda de esta grilla cae.   
 
-                         DESNUTRICIÓN
-                  Baja      Media      Alta
-               ┌─────────┬─────────┬─────────┐
-    A    Baja  │ #e8e8e8 │ #dfb0d6 │ #be64ac │
-    N          ├─────────┼─────────┼─────────┤
-    E    Media │ #ace4e4 │ #a5b3cc │ #8c62aa │   
-    M          ├─────────┼─────────┼─────────┤
-    I    Alta  │ #5ac8c8 │ #5698b9 │ #3b4994 │ ← más crítico
-    A          └─────────┴─────────┴─────────┘
-
-Cada región del mapa recibe un color según en qué celda de esta grilla cae.   
-
-Los mapas bivariados permiten explorar posibles asociaciones espaciales entre variables,
+> Nota:
+> Los mapas bivariados permiten explorar posibles asociaciones espaciales entre variables,
 lo cual es útil para generar hipótesis en estudios epidemiológicos o económicos.
-
 Resultado: 
+---
 
+### Hallazgos de ejemplo aplicado (Perú 2024)
 
-### Hallazgos 
+Se encontró que, en la sierra y selva concentran mayores niveles de anemia y desnutrición. Por otra parte, la costa sur presenta niveles más bajos y existen regiones con patrones mixtos, lo que sugiere que ambas variables no siguen una relación perfectamente paralela.
 
-Se encontró que, en los departamentos con mayor concentración de ambos problemas (color azul oscuro #3b4994) son los que requieren intervención prioritaria en políticas de salud pública.
+### Limitaciones
 
-Los resultados muestran un claro patrón, los departamentos de la sierra y selva concentran los niveles más altos de anemia y desnutrición, mientras que los de la costa sur (Tacna, Moquegua, Ica) presentan los niveles más bajos.
+- Clasificación relativa (no clínica)
+- Nivel de agregación departamental
+- Análisis descriptivo (no causal)
 
 ### Referencias
 
