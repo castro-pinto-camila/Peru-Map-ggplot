@@ -259,3 +259,51 @@ paleta_bivar <- c(
 
 ---
 
+## Mapa principal
+
+```{r}
+#| label: mapa
+#| fig-width: 8
+#| fig-height: 10
+
+mapa <- ggplot(peru_datos) +
+
+  geom_sf(
+    aes(fill = bivar_class),
+    color     = "grey90",   # ← antes white (muy fuerte)
+    linewidth = 0.2         # ← más fino
+  ) +
+
+  scale_fill_manual(values = paleta_bivar) +
+
+  labs(
+    title    = "Anemia y desnutrición crónica infantil en el Perú",
+    subtitle = "Niños de 6–35 meses · Hb < 11 g/dL (OMS 2024)",
+    caption  = "Fuente: ENDES 2024 — INEI. Elaborado en R (sf + ggplot2)"
+  ) +
+
+  theme_void() +
+  theme(
+    plot.title = element_text(
+      size   = 16,
+      face   = "bold",
+      hjust  = 0   # ← izquierda (pro)
+    ),
+    plot.subtitle = element_text(
+      size   = 10,
+      hjust  = 0,
+      color  = "grey35"
+    ),
+    plot.caption = element_text(
+      size   = 7,
+      hjust  = 0,
+      color  = "grey45"
+    ),
+    legend.position = "none",
+    plot.background = element_rect(fill = "white", color = NA),
+    plot.margin     = margin(15, 20, 15, 20)
+  )
+```
+
+---
+
