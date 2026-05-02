@@ -1,12 +1,19 @@
-## Cómo crear mapas en R (aplicable a cualquier país)
+## Cómo crear mapas en R (coroplético y bivariado)
 
-En este repositorio podrán encontrar una guía para construir mapas geográficos en R usando datos abiertos, desde un mapa coroplético básico hasta un mapa bivariado (una técnica de visualización que representa dos variables simultáneamente mediante una paleta de color 2D).
+Este repositorio presenta una guía reproducible para construir mapas geográficos 
+en R usando datos abiertos y `ggplot2`.
 
-El flujo es reproducible y adaptable a cualquier país utilizando datos geoespaciales (shapefiles) y variables de interés. Como ejemplo, se visualiza la relación entre anemia infantil y desnutrición crónica en los 25 departamentos del Perú usando datos oficiales del INEI (ENDES 2024). 
+Se incluyen:
+- Un **mapa coroplético**
+- Un **mapa bivariado (2 variables simultáneas)**
+
+El flujo es adaptable a cualquier país y conjunto de datos.
+
+---
 
 ### Resultado ! 
-<img width="768" height="960" alt="image" src="https://github.com/user-attachments/assets/7888b4c4-66be-4b20-9065-1ee41aa2f11e" />
-
+👉 **Ver resultado completo aquí:**  
+[🔗 Abrir visualización](mapa_bivariado_anemia.html)
 
 ### Metodología
 
@@ -27,7 +34,6 @@ install.packages(c("sf", "ggplot2", "dplyr", "geodata", "cowplot"))
 
 ### ¿Cómo adaptarlo a otro país o variables?
 
-Se necesita cambiar 3 cosas en el código. 
 1. El país del shapefile:
 ```
 # Cambia "PER" por el código ISO de tu país
@@ -85,7 +91,7 @@ Los mapas bivariados permiten explorar posibles asociaciones espaciales entre va
 lo cual es útil para generar hipótesis en estudios epidemiológicos o económicos.
 
 Resultado: 
-<img width="768" height="960" alt="image" src="https://github.com/user-attachments/assets/3684a01e-f5f5-4dbb-af4c-1c8b087d665d" />
+
 
 ### Hallazgos 
 
