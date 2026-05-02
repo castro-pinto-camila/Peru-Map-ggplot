@@ -13,7 +13,7 @@ El flujo es adaptable a cualquier país y conjunto de datos.
 
 ### Resultado ! 
 👉 **Ver resultado completo aquí:**  
-[🔗 Abrir visualización](mapa__anemia_peru.html)
+[🔗 Abrir visualización](mapa_anemia_peru.html)
 
 Ejemplo aplicado:
 - **Anemia infantil (6–35 meses)**
