@@ -15,6 +15,7 @@ El flujo es adaptable a cualquier país y conjunto de datos.
 👉 **Ver resultado completo aquí:**  
 [🔗 Abrir visualización](mapa__anemia_peru.html)
 ![Preview]("C:\Users\CAMILA\Downloads\mapa_bivariado_anemia_desnutricion_peru_2024.png")
+
 Ejemplo aplicado:
 - **Anemia infantil (6–35 meses)**
 - **Desnutrición crónica (<5 años)**
