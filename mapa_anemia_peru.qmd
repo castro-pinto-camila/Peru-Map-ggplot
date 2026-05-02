@@ -402,6 +402,28 @@ ggsave(
 )
 ```
 ---
+```{r}
+#| label: tabla-hallazgos
 
+resumen <- peru_datos |>
+  st_drop_geometry() |>          # ← elimina la geometría para trabajar como tabla normal
+  mutate(
+    criticidad = case_when(
+      bivar_class == "3-3"                            ~ "🔴 Crítico (ambas altas)",
+      cat_anemia == 3 | cat_desnutricion == 3         ~ "🟠 Alto en al menos una",
+      cat_anemia == 1 & cat_desnutricion == 1         ~ "🟢 Bajo en ambas",
+      TRUE                                            ~ "🟡 Moderado"
+    )
+  ) |>
+  arrange(desc(anemia)) |>
+  select(
+    Departamento       = region,
+    `Anemia (%)`       = anemia,
+    `Desnutrición (%)` = desnutricion,
+    Clasificación      = criticidad
+  )
+
+knitr::kable(resumen, align = c("l", "r", "r", "l"))
+```
 
 
